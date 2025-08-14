@@ -1,10 +1,13 @@
-name: Build Django Application
+name: Build Django Application for Production
 
 on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -18,9 +21,3 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-
-      - name: Run migrations
-        run: |
-          python manage.py migrate

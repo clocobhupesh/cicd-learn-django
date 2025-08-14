@@ -1,0 +1,26 @@
+name: Deploy Django Application to Production
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    uses: ./.github/workflows/build.yaml
+
+  test:
+    needs: build
+    uses: ./.github/workflows/test.yaml
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Production
+        run: |
+          echo "Deploying Django application to PRODUCTION..."
+          # Add production deployment commands here
