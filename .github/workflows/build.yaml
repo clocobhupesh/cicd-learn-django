@@ -1,8 +1,8 @@
 name: Build Django Application
 
 on:
-  workflow_call
-  workflow_dispatch
+  workflow_call:
+  workflow_dispatch:
 
 jobs:
   build:
