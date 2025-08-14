@@ -1,0 +1,27 @@
+name: Deploy Django Application
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    uses: ./.github/workflows/build.yaml
+
+  test:
+    needs: build
+    uses: ./.github/workflows/test.yaml
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Add your deployment steps here
+      - name: Deploy Application
+        run: |
+          echo "Deploying Django application..."
+          # Add actual deployment commands here
