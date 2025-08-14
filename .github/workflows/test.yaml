@@ -8,6 +8,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifact
+
       - name: Checkout code
         uses: actions/checkout@v4
 
