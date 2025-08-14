@@ -1,11 +1,16 @@
 name: Deploy Django Application
 
 on:
-  workflow_call
-  workflow_dispatch
+  workflow_dispatch:
+  push:
+    branches: [ main ]
 
 jobs:
+  build:
+    uses: ./.github/workflows/build.yaml
+
   test:
+    needs: build
     uses: ./.github/workflows/test.yaml
 
   deploy:

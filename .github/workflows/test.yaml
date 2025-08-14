@@ -1,15 +1,11 @@
 name: Test Django Application
 
 on:
-  workflow_call
-  workflow_dispatch
+  workflow_call:
+  workflow_dispatch:
 
 jobs:
-  build:
-    uses: ./.github/workflows/build.yaml
-
   test:
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
