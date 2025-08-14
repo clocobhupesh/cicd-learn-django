@@ -46,3 +46,4 @@ Sure, here's a list of the conventional commit types along with their meanings:
 12. **bump**: Bumping the version number of the project, typically used in semantic versioning.
 
 These conventional commit types help maintain consistency in commit messages and provide useful information about the nature of changes made to the project.;
+A
