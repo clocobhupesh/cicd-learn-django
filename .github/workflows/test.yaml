@@ -1,0 +1,16 @@
+name: Run Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    uses: ./.github/workflows/build.yaml
+    secrets: inherit
+    steps:
+      - name: Run Django tests
+        run: |
+          python manage.py test
