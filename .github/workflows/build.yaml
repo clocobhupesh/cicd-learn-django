@@ -1,6 +1,9 @@
 name: Build Django Application
 
 on:
+  workflow_call
+  workflow_dispatch
+
 jobs:
   build:
     runs-on: ubuntu-latest
