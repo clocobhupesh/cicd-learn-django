@@ -23,5 +23,5 @@ jobs:
       # Add your deployment steps here
       - name: Deploy Application
         run: |
-          echo "Deploying Django application..."
+          echo "Deploying Django application..s."
           # Add actual deployment commands here
